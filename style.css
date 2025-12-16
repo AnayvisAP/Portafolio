@@ -1,0 +1,106 @@
+body {
+    background-color: #0C0C0C;
+    font-family: 'MiFuentePersonalizada', sans-serif; 
+    
+}
+
+@font-face {
+    font-family: 'Espoir'; 
+    src: url('Fonts/espoir-regular-webfont.woff2') format('woff2'), /* Ruta al archivo WOFF2 */
+         url('Fonts/espoir-regular-webfont.woff') format('woff'),  /* Ruta al archivo WOFF */
+         
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Espoir' ;
+    font-weight: 400;
+    letter-spacing: 15px;
+    color: #D9D9D9; 
+    text-align: center;
+    font-size: 48px;
+}
+
+.divider-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.linea-izquierda, .linea-derecha {
+    flex-grow: 1; 
+    border: none;
+    border-top: 1px solid #D9D9D9; 
+    margin: 10px; 
+}
+
+.punto-central {
+    width: 8px; 
+    height: 8px;
+    background-color: #D9D9D9; 
+    border-radius: 50%; 
+    flex-shrink: 0; 
+}
+
+.contenedor-imagen{
+    width: 100%;
+    height: 794px;
+    text-align: center;     
+}
+
+.contenedor-imagen img{
+    width: 100%;
+    height: 662px;
+    margin-bottom: 15px;
+}
+
+.contenedor-imagen p{
+    color: #F9F9F9;
+    letter-spacing: 8px;
+    text-transform: uppercase; 
+}
+
+.contenedor1{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    gap: 48px;
+    margin-right: 48px;
+    margin-left: 48px;
+    
+}
+.diseño-web img, .diseño-movil img{
+    width: 100%;
+    height: auto;
+}
+   
+
+.diseño-web p, .diseño-movil p, .otros p, .texto {
+    color: #F9F9F9;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.contenedor2{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    gap: 48px;
+    margin-right: 48px;
+    margin-left: 48px;
+}
+
+a{
+    color: #D9D9D9;
+
+}
+
+.cards {
+    gap: 48px;
+    margin: 24px 32px;
+}
