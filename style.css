@@ -1,123 +1,136 @@
+/* ❌ Mala práctica: usar gap sin display:flex o grid */
+/* body { gap: 48px; } */
+
+/* ✅ Buena práctica */
 body {
-    background-color: #0C0C0C;
-    font-family: 'MiFuentePersonalizada', sans-serif; 
-    margin: 0px;
-    gap: 48px;
-    
+  background-color: #0c0c0c;
+  margin: 0;
+  font-family: "Espoir", sans-serif;
 }
 
+/* ✅ Correcto: definición de fuentes externas */
 @font-face {
-    font-family: 'Espoir'; 
-    src: url('Fonts/espoir-regular-webfont.woff2') format('woff2'), /* Ruta al archivo WOFF2 */
-         url('Fonts/espoir-regular-webfont.woff') format('woff'),  /* Ruta al archivo WOFF */
-         
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Espoir";
+  src: url("Fonts/espoir-regular-webfont.woff2") format("woff2"),
+    url("Fonts/espoir-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
+/* ❌ Mala práctica: letter-spacing muy grande sin considerar mobile */
+/* ✅ Se ajustará luego con media queries */
 h1 {
-    font-family: 'Espoir' ;
-    font-weight: 400;
-    letter-spacing: 15px;
-    color: #D9D9D9; 
-    text-align: center;
-    font-size: 48px;
+  font-family: "Espoir";
+  font-weight: 400;
+  letter-spacing: 15px;
+  color: #d9d9d9;
+  text-align: center;
+  font-size: 48px;
 }
 
+/* ✅ Clase reutilizable en vez de estilos inline */
+.highlight {
+  color: #ffea03;
+}
+
+/* ✅ Flex bien aplicado */
 .divider-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    width: 100%;
-    margin-top: 24px;
-    margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 24px 0;
 }
 
-.linea-izquierda, .linea-derecha {
-    flex-grow: 1; 
-    border: none;
-    border-top: 1px solid #D9D9D9; 
-    margin: 10px; 
+.linea-izquierda,
+.linea-derecha {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #d9d9d9;
+  margin: 10px;
 }
 
 .punto-central {
-    width: 8px; 
-    height: 8px;
-    background-color: #D9D9D9; 
-    border-radius: 50%; 
-    flex-shrink: 0; 
+  width: 8px;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
 }
 
-.contenedor-imagen{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px; 
-    text-align: center;
+/* ❌ Mala práctica: altura fija en imágenes */
+/* height: 662px; */
+
+/* ✅ Buena práctica: imágenes responsivas */
+.contenedor-imagen img {
+  width: 100%;
+  height: auto;
+  max-height: 662px;
+  object-fit: cover;
 }
 
-.contenedor-imagen img{
-    width: 100%;
-    height: 662px;
-    margin-bottom: 15px;
+/* ✅ Texto reutilizable */
+.texto-descriptivo {
+  color: #d9d9d9;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-size: 18px;
+  max-width: 1300px;
+  text-align: center;
+  line-height: 1.8;
 }
 
-.contenedor-imagen p{
-    color: #D9D9D9;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    font-size: 18px;
-    max-width: 1300px;
-    width: 100%;
-    line-height: 1.8;
-    margin: 0;
-}
-
+/* ✅ Flex con separación correcta */
 .cards {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    margin-top: 95px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 95px;
 }
 
-.contenedor1, .contenedor2 {
-    display: flex;
-    gap: 48px;
-    width: 100%;
-    padding-left: 100px;
-    padding-right: 100px
+/* ❌ Mala práctica: padding-left y padding-right separados */
+/* ✅ Buena práctica: shorthand */
+.contenedor1,
+.contenedor2 {
+  display: flex;
+  gap: 48px;
+  padding: 0 100px;
 }
 
-.diseño-web, .diseño-movil, .otros, .texto {
-    flex: 1; 
-    min-height: 300px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* ❌ Mala práctica: clases con ñ */
+/* .diseño-web */
 
-.diseño-web img, .diseño-movil img, .otros img {
-    max-width: 100%; 
-    height: auto; 
-    object-fit: contain; 
-}
-
-.diseño-web p, .diseño-movil p, .otros p, .texto p{
-    color: #D9D9D9;
-    font-size: 18px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-}
-
+/* ✅ Buena práctica: nombres simples */
+.diseno-web,
+.diseno-movil,
+.otros,
 .texto {
-    justify-content: flex-start; 
-    align-items: flex-start;
-    text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-a{
-  color: #D9D9D9;
+/* ❌ Mala práctica: repetir estilos */
+/* ✅ Buena práctica: clase base */
+.texto p,
+.diseno-web p,
+.diseno-movil p,
+.otros p {
+  color: #d9d9d9;
+  font-size: 18px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
 }
 
+/* ✅ Responsive básico */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+
+  .contenedor1,
+  .contenedor2 {
+    flex-direction: column;
+    padding: 0 24px;
+  }
+}
