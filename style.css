@@ -9,9 +9,7 @@ body {
 @font-face {
     font-family: 'Espoir';
     src: url('Fonts/espoir-regular-webfont.woff2') format('woff2'),
-        /* Ruta al archivo WOFF2 */
         url('Fonts/espoir-regular-webfont.woff') format('woff'),
-        /* Ruta al archivo WOFF */
         font-weight: normal;
     font-style: normal;
 }
