@@ -1,26 +1,38 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #0C0C0C;
-    margin: 0px;
     text-transform: uppercase;
     font-weight: 400;
+    color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 32px 0;
 }
 
 @font-face {
     font-family: 'Espoir';
     src: url('Fonts/espoir-regular-webfont.woff2') format('woff2'),
-        url('Fonts/espoir-regular-webfont.woff') format('woff'),
+        url('Fonts/espoir-regular-webfont.woff') format('woff');
         font-weight: normal;
     font-style: normal;
+}
+
+.initial-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 }
 
 h1 {
     font-family: 'Espoir';
     font-weight: 400;
     letter-spacing: 15px;
-    color: #D9D9D9;
     text-align: center;
     font-size: 48px;
+    margin: 0;
 }
 
 .highlight {
@@ -32,7 +44,7 @@ h1 {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 24px auto;
+    margin: 0;
     max-width: 1300px; 
 }
 
@@ -40,7 +52,7 @@ h1 {
 .right-line {
     flex-grow: 1;
     border: none;
-    border-top: 1px solid #d9d9d9;
+    border-top: 2px solid;
     margin: 10px;
 }
 
@@ -56,10 +68,9 @@ ul{
     list-style-type: none;
     display: flex;
     justify-content: center;
-    color: #d9d9d9;
     gap: 24px;
     letter-spacing: 8px;
-    margin: 48px 0;
+    margin: 0;
 }
 
 ul li:hover {
@@ -92,7 +103,6 @@ ul li.active {
 
 .main-text {
     font-family: Arial, Helvetica, sans-serif;
-    color: #d9d9d9;
     letter-spacing: 8px;
     font-size: 18px;
     max-width: 1300px;
@@ -104,7 +114,7 @@ ul li.active {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-top: 95px;
+    margin-top: 48px;
 }
 
 .container-one,
@@ -142,13 +152,71 @@ ul li.active {
     line-height: 1.4;
 }
 
-a {
-    color: #D9D9D9;
-    flex: 1;
+.footer-content {
+    padding: 0 100px;
     display: flex;
-    flex-direction: column;
+    gap: 48px;
+    align-items: center;
 }
 
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+a {
+    color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 8px;
+    text-decoration: none;
+}
+
+.profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work {
+    background-color: #0c0c0c;
+    color: #ffea03;
+    border: 1px solid #ffea03;
+    text-align: center;
+    font-size: 18px;
+    width: 422px;
+    padding: 18px 32px;
+    margin-left: auto;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-circle {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-circle {
+        width: 100px;
+        height: 100px;
+    }
+}
 
 @media (max-width: 768px) {
     h1 {
